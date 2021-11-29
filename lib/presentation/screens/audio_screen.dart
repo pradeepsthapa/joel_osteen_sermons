@@ -5,6 +5,7 @@ import 'package:joel_osteen_sermons/data/constants.dart';
 import 'package:joel_osteen_sermons/logics/feed_state_controller.dart';
 import 'package:joel_osteen_sermons/logics/providers.dart';
 import 'package:joel_osteen_sermons/presentation/screens/youtube_screen.dart';
+import 'package:joel_osteen_sermons/presentation/widgets/google_banner_widget.dart';
 import 'package:lottie/lottie.dart';
 import 'feed_viewer_screen.dart';
 import 'main_drawer.dart';
@@ -54,7 +55,9 @@ class _AudioScreenState extends ConsumerState<AudioScreen> {
             ],
           ),
         ),
-          body: FeedViewerScreen(rssFeed: state.feed));
+          body: FeedViewerScreen(rssFeed: state.feed),
+        bottomNavigationBar: const GoogleBannerWidget(),
+      );
     }
     if(state is FeedError){
       return Center(child: Padding(

@@ -1,9 +1,11 @@
 import 'package:animations/animations.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_admob_app_open/flutter_admob_app_open.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:joel_osteen_sermons/presentation/screens/audio_screen.dart';
 import 'audio/audio_hander.dart';
 import 'data/constants.dart';
@@ -11,10 +13,15 @@ import 'logics/providers.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await initialAds();
   await startService();
   runApp(const ProviderScope(child: MyApp()));
 }
-
+Future<void> initialAds()async{
+  const appAppOpenAdUnitId = "ca-app-pub-2693320098955235/8360496353";
+  await FlutterAdmobAppOpen.instance.initialize(appAppOpenAdUnitId: appAppOpenAdUnitId);
+  await MobileAds.instance.initialize();
+}
 Future<void> startService() async {
   await GetStorage.init();
   final box = GetStorage();

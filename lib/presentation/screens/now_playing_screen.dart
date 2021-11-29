@@ -6,6 +6,7 @@ import 'package:joel_osteen_sermons/audio/audio_hander.dart';
 import 'package:joel_osteen_sermons/audio/media_state.dart';
 import 'package:joel_osteen_sermons/audio/queue_state.dart';
 import 'package:joel_osteen_sermons/audio/queue_stream_provider.dart';
+import 'package:joel_osteen_sermons/presentation/widgets/google_banner_widget.dart';
 import 'package:joel_osteen_sermons/presentation/widgets/seekbar.dart';
 
 class NowPlayingScreen extends StatelessWidget {
@@ -188,6 +189,7 @@ class NowPlayingScreen extends StatelessWidget {
           );
         }
       ),
+      bottomNavigationBar: const GoogleBannerWidget(),
     );
   }
 }

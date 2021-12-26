@@ -1,9 +1,6 @@
 import 'package:audio_service/audio_service.dart';
 import 'package:audio_session/audio_session.dart';
-import 'package:get_it/get_it.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:joel_osteen_sermons/audio/queue_state.dart';
-import 'package:joel_osteen_sermons/data/constants.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
 import 'medialibrary.dart';
@@ -71,12 +68,12 @@ class AudioPlayerHandlerImpl extends BaseAudioHandler with QueueHandler, SeekHan
           state.queue.length == state.shuffleIndices!.length);
 
   @override
-  Future<void> setShuffleMode(AudioServiceShuffleMode mode) async {
-    final enabled = mode == AudioServiceShuffleMode.all;
+  Future<void> setShuffleMode(AudioServiceShuffleMode shuffleMode) async {
+    final enabled = shuffleMode == AudioServiceShuffleMode.all;
     if (enabled) {
       await _player.shuffle();
     }
-    playbackState.add(playbackState.value.copyWith(shuffleMode: mode));
+    playbackState.add(playbackState.value.copyWith(shuffleMode: shuffleMode));
     await _player.setShuffleModeEnabled(enabled);
   }
 

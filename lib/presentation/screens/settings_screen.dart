@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:joel_osteen_sermons/data/constants.dart';
 import 'package:joel_osteen_sermons/data/font_model.dart';
 import 'package:joel_osteen_sermons/logics/providers.dart';
-import 'package:joel_osteen_sermons/presentation/widgets/font_slider_widget.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,7 +11,6 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: PreferredSize(preferredSize: const Size.fromHeight(50),
         child: AppBar(

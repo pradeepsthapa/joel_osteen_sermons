@@ -34,7 +34,7 @@ class FeedStateProvider extends StateNotifier<FeedState> {
       }
     } on SocketException catch (e) {
       state = FeedError(message: e.message);
-    }on Exception catch (e) {
+    }on Exception catch (_) {
       state = const FeedError(message: "Something went wrong");
     }
   }

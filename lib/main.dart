@@ -116,8 +116,14 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Material(
-      child: AudioScreen(),
+    return WillPopScope(
+      onWillPop: () async{
+        ref.read(interstitialAdProvider).showExitAd();
+        return false;
+      },
+      child: const Material(
+        child: AudioScreen(),
+      ),
     );
   }
 }

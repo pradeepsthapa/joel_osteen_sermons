@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:joel_osteen_sermons/data/constants.dart';
 import 'package:joel_osteen_sermons/logics/feed_state_controller.dart';
 import 'package:joel_osteen_sermons/logics/providers.dart';
 import 'package:joel_osteen_sermons/presentation/screens/youtube_screen.dart';
-import 'package:joel_osteen_sermons/presentation/widgets/google_banner_widget.dart';
+import 'package:joel_osteen_sermons/presentation/widgets/facebook_banner_widget.dart';
 import 'package:lottie/lottie.dart';
 import 'feed_viewer_screen.dart';
 import 'main_drawer.dart';
@@ -56,7 +55,7 @@ class _AudioScreenState extends ConsumerState<AudioScreen> {
           ),
         ),
           body: FeedViewerScreen(rssFeed: state.feed),
-        bottomNavigationBar: const GoogleBannerWidget(),
+        bottomNavigationBar: const FacebookBannerWidget(),
       );
     }
     if(state is FeedError){
@@ -67,7 +66,7 @@ class _AudioScreenState extends ConsumerState<AudioScreen> {
           children: [
             Lottie.asset("assets/json/error.json"),
             Text("Something went wrong",style: Theme.of(context).textTheme.headline5!.copyWith(color: Theme.of(context).errorColor),),
-            Text("Please connect to the internet and try agaian.",style: Theme.of(context).textTheme.caption,),
+            Text("Please connect to the internet and try again.",style: Theme.of(context).textTheme.caption,),
             Padding(
               padding: const EdgeInsets.only(top: 30),
               child: MaterialButton(

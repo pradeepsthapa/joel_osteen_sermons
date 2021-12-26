@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 import 'feed_state_controller.dart';
+import 'interstitial_adservice.dart';
 import 'storage_controller.dart';
 import 'youtube_services.dart';
 
@@ -9,6 +10,8 @@ final fontSizeProvider = StateProvider<double>((ref)=>17.0);
 // final appColorProvider = StateProvider<int>((ref)=>0);
 final globalFontProvider = StateProvider<int>((ref)=>0);
 final boxStorageProvider = ChangeNotifierProvider<StorageProvider>((ref)=>StorageProvider(ref.read)..initStorage());
+
+final interstitialAdProvider = Provider<InterstitialAdService>((ref)=>InterstitialAdService());
 
 final alwaysShowCommentaryProvider = StateProvider<bool>((ref)=>true);
 

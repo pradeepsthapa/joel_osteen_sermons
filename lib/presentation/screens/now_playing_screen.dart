@@ -90,7 +90,7 @@ class NowPlayingScreen extends ConsumerWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-                                    child: Text(formattedDate,style: TextStyle(color: Theme.of(context).colorScheme.secondaryVariant.withOpacity(0.7),fontWeight: FontWeight.w600,fontSize: 11)),
+                                    child: Text(formattedDate,style: TextStyle(color: Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.7),fontWeight: FontWeight.w600,fontSize: 11)),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.symmetric(vertical: 3,horizontal: 7),

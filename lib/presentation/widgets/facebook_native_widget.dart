@@ -20,6 +20,7 @@ class NativeBannerAdWidget extends StatelessWidget {
         buttonColor: Colors.deepPurple,
         buttonTitleColor: Colors.white,
         buttonBorderColor: Colors.white,
+        keepExpandedWhileLoading: false,
         listener: (result, value) {
         },
       ),

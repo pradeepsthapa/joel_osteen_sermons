@@ -24,7 +24,7 @@ class _FeedViewerScreenState extends ConsumerState<FeedViewerScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       final mediaList = widget.rssFeed.items?.map((e) => MediaItem(
         id: e.enclosure?.url??'',
         artist: e.itunes?.author??'',
@@ -100,7 +100,7 @@ class _FeedViewerScreenState extends ConsumerState<FeedViewerScreen> {
                                   ),
                                   if(playbackState?.queueIndex!=index)Align(
                                       alignment: Alignment.bottomRight,
-                                      child: Text(formattedDate, style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 10,color: isDark?Colors.grey[500]:Theme.of(context).colorScheme.secondaryVariant.withOpacity(0.8)))),
+                                      child: Text(formattedDate, style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 10,color: isDark?Colors.grey[500]:Theme.of(context).colorScheme.secondary.withOpacity(0.8)))),
                                 ],
                               ),
                               onTap: (){

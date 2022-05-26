@@ -44,12 +44,8 @@ class YouTubeHome extends ConsumerWidget {
                     final video = data[index];
                     return InkWell(
                       onTap: ()async{
-                        if(await canLaunch(video.url)){
-                        await launch(video.url);
-                        }
-                        else{
-                        throw 'Could not launch ${video.url}';
-                        }
+                        final url = video.url;
+                        if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
                       },
                       child: Card(
                         elevation: 7,

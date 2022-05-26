@@ -178,12 +178,7 @@ class SettingsScreen extends StatelessWidget {
             subtitle: const Text("Explore more similar Bible apps"),
             onTap: ()async{
               const url = 'https://play.google.com/store/apps/developer?id=pTech';
-              if(await canLaunch(url)){
-                await launch(url);
-              }
-              else{
-                throw 'Could not launch $url';
-              }
+              if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
             },
           ),
           ListTile(
@@ -191,12 +186,7 @@ class SettingsScreen extends StatelessWidget {
             title: const Text("Privacy Policy"),
             onTap: ()async{
               const url = 'https://thechristianposts.com/joel-osteen-sermons/';
-              if(await canLaunch(url)){
-                await launch(url);
-              }
-              else{
-                throw 'Could not launch $url';
-              }
+              if (!await launchUrl(Uri.parse(url))) throw 'Could not launch $url';
             },
           ),
         ],
